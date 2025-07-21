@@ -8,14 +8,11 @@
     <!-- ...existing code... -->
   </head>
   <body>
-    <!-- ...existing code... -->
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
-    </header>
+  <!-- ...existing code... -->
+  <header>
+    <h1>Mergington High School</h1>
+    <h2>Extracurricular Activities</h2>
+  </header>
 
     <main>
       <section id="activities-container">
@@ -71,11 +68,11 @@
                             ? `<ul class="participants-list">
                                 ${activity.participants.map(email => `<li>${email}</li>`).join('')}
                                </ul>`
-                            : `<span style="color:#888;">No participants yet.</span>`
+                            : `<span class="text-muted">No participants yet.</span>`
                         }
                     </div>
                     <form onsubmit="signup(event, '${name}')">
-                        <input type="email" name="email" placeholder="Your email" required style="margin-right:0.5em;">
+                        <input type="email" name="email" placeholder="Your email" required class="activity-email-input">
                         <button type="submit">Sign Up</button>
                     </form>
                 `;
@@ -89,21 +86,6 @@
                 `;
                 container.appendChild(card);
             });
-        }
-        // ...existing code...
-    </script>
-  </body>
-</html>
-                            ? `<ul class="participants-list">
-                                ${activity.participants.map(email => `<li>${email}</li>`).join('')}
-                               </ul>`
-                            : `<span style="color:#888;">No participants yet.</span>`
-                        }
-                    </div>
-                    <form onsubmit="signup(event, '${name}')">
-                        <input type="email" name="email" placeholder="Your email" required style="margin-right:0.5em;">
-                        <button type="submit">Sign Up</button>
-                    </form>
                 `;
                 container.appendChild(card);
             });

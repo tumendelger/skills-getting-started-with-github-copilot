@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ? `<ul class="participants-list">
                     ${details.participants.map(email => `<li>${email}</li>`).join('')}
                    </ul>`
-                : `<span style="color:#888;">No participants yet.</span>`
+                : `<span class="no-participants">No participants yet.</span>`
             }
           </div>
         `;
