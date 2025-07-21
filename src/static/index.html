@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mergington High School Activities</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- ...existing code... -->
+  </head>
+  <body>
+    <!-- ...existing code... -->
+    </style>
   </head>
   <body>
     <header>
@@ -46,5 +51,64 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // ...existing code...
+        function renderActivities(activities) {
+            const container = document.getElementById('activities-container');
+            container.innerHTML = '';
+            Object.entries(activities).forEach(([name, activity]) => {
+                const card = document.createElement('div');
+                card.className = 'activity-card';
+                card.innerHTML = `
+                    <h3>${name}</h3>
+                    <p><strong>Description:</strong> ${activity.description}</p>
+                    <p><strong>Schedule:</strong> ${activity.schedule}</p>
+                    <p><strong>Max Participants:</strong> ${activity.max_participants}</p>
+                    <div class="participants-section">
+                        <h4>Participants</h4>
+                        ${
+                            activity.participants.length > 0
+                            ? `<ul class="participants-list">
+                                ${activity.participants.map(email => `<li>${email}</li>`).join('')}
+                               </ul>`
+                            : `<span style="color:#888;">No participants yet.</span>`
+                        }
+                    </div>
+                    <form onsubmit="signup(event, '${name}')">
+                        <input type="email" name="email" placeholder="Your email" required style="margin-right:0.5em;">
+                        <button type="submit">Sign Up</button>
+                    </form>
+                `;
+                container.appendChild(card);
+            });
+        }
+        // ...existing code...
+    </script>
+  </body>
+</html>
+                `;
+                container.appendChild(card);
+            });
+        }
+        // ...existing code...
+    </script>
+  </body>
+</html>
+                            ? `<ul class="participants-list">
+                                ${activity.participants.map(email => `<li>${email}</li>`).join('')}
+                               </ul>`
+                            : `<span style="color:#888;">No participants yet.</span>`
+                        }
+                    </div>
+                    <form onsubmit="signup(event, '${name}')">
+                        <input type="email" name="email" placeholder="Your email" required style="margin-right:0.5em;">
+                        <button type="submit">Sign Up</button>
+                    </form>
+                `;
+                container.appendChild(card);
+            });
+        }
+        // ...existing code...
+    </script>
   </body>
 </html>
